@@ -1,6 +1,9 @@
 .App {
   text-align: center;
 }
+nav {
+  text-align: center;
+}
 
 .test {
   display: flex;
@@ -29,4 +32,19 @@
 
 .App-link {
   color: #61dafb;
+}
+
+.inputContainer {
+  width: 100%;
+  text-align: center;
+}
+
+.cityState {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.newUserForm {
+  text-align: center;
 }
