@@ -48,3 +48,7 @@ nav {
 .newUserForm {
   text-align: center;
 }
+
+.userCard {
+  display: flex;
+}
