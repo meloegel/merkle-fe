@@ -6,6 +6,7 @@ import Select from '@material-ui/core/Select';
 import TextField from '@material-ui/core/TextField';
 import FormControl from '@material-ui/core/FormControl';
 import * as yup from 'yup';
+import RegistrationSchema from './RegistrationSchema'
 import { Button } from '@material-ui/core';
 import axios from 'axios';
 
@@ -31,14 +32,10 @@ const initialFormErrors = {
     country: '',
 };
 
-const initialDisabled = true;
-
-
 function Register() {
     const { push } = useHistory();
     const [formValues, setFormValues] = useState(initialFormValues)
     const [formErrors, setFormErrors] = useState(initialFormErrors)
-    const [disabled, setDisabled] = useState(initialDisabled)
 
     const handleConformation = (res) => {
         if (res.status === 201) {
@@ -49,7 +46,7 @@ function Register() {
 
     const onSubmit = (evt) => {
         evt.preventDefault();
-        console.log(formValues)
+        // if (formValues.firstName === null || formValues.lastName === null || formValues.addressOne === null || formValues.city === null || formValues.state === null || formValues.zip === null || formValues.firstName === null)
         axios.post('http://localhost:8000/api/users/register', formValues)
             .then((res) => {
                 handleConformation(res)
@@ -62,6 +59,21 @@ function Register() {
     const onInputChange = (evt) => {
         const name = evt.target.name;
         const value = evt.target.value;
+        yup
+            .reach(RegistrationSchema, name)
+            .validate(value)
+            .then((valid) => {
+                setFormErrors({
+                    ...formErrors,
+                    [name]: '',
+                });
+            })
+            .catch((error) => {
+                setFormErrors({
+                    ...formErrors,
+                    [name]: error.errors[0],
+                });
+            });
         setFormValues({
             ...formValues,
             [name]: value,
@@ -70,7 +82,7 @@ function Register() {
 
     return (
         <div className='newUserForm'>
-            <FormControl onSubmit={onSubmit} disabled={disabled} >
+            <FormControl onSubmit={onSubmit} validate >
                 <div>
                     <h1>Reg</h1>
                     <div className='inputContainer'>
@@ -82,6 +94,7 @@ function Register() {
                                 name='firstName'
                                 label='First Name'
                                 type='text'
+                                className='input'
                             />
                             <TextField
                                 values={formValues.lastName}
@@ -90,6 +103,7 @@ function Register() {
                                 name='lastName'
                                 label='Last Name'
                                 type='text'
+                                className='input'
                             />
                         </div>
                         <div>
@@ -100,6 +114,7 @@ function Register() {
                                 name='addressOne'
                                 label='Address'
                                 type='text'
+                                className='input'
                             />
                             <TextField
                                 values={formValues.addressTwo}
@@ -108,6 +123,7 @@ function Register() {
                                 name='addressTwo'
                                 label='Address Cont.'
                                 type='text'
+                                className='input'
                             />
                         </div>
                         <div className='cityState'>
@@ -118,9 +134,10 @@ function Register() {
                                 name='city'
                                 label='City'
                                 type='text'
+                                className='input'
                             />
-                            <div>
-                                <FormControl>
+                            <div >
+                                <FormControl className='input'>
                                     <InputLabel>State</InputLabel>
                                     <Select
                                         labelId='State'
@@ -192,6 +209,7 @@ function Register() {
                                 name='zip'
                                 label='Zip'
                                 type='text'
+                                className='input'
                             />
                             <TextField
                                 values={formValues.Country}
@@ -200,8 +218,18 @@ function Register() {
                                 name='country'
                                 label='Country'
                                 type='text'
+                                className='input'
                             />
                         </div>
+                    </div>
+                    <div className='formErrors'>
+                        <div>{formErrors.firstName}</div>
+                        <div>{formErrors.lastName}</div>
+                        <div>{formErrors.addressOne}</div>
+                        <div>{formErrors.city}</div>
+                        <div>{formErrors.state}</div>
+                        <div>{formErrors.zip}</div>
+                        <div>{formErrors.country}</div>
                     </div>
                     <div>
                         <Button variant="contained" onClick={onSubmit}>Submit</Button>

@@ -12,7 +12,7 @@ function App() {
   return (
     <Router>
       <nav>
-        <NavLink to='/'>Home</NavLink>
+        <NavLink to='/' className='nav'>Home</NavLink>
       </nav>
       <Switch>
         <Route exact path='/' component={Home} />

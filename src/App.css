@@ -1,8 +1,18 @@
+/* Global */
+html {
+  background-color: #2e2f32;
+}
+
 .App {
   text-align: center;
 }
+
+/* Nav */
 nav {
   text-align: center;
+}
+.nav {
+  color: white;
 }
 
 .test {
@@ -52,4 +62,14 @@ nav {
 #userTable {
   width: 95%;
   margin: 0 auto;
+  background-color: gray;
+}
+
+.input {
+  background-color: lightgray;
+}
+
+.formErrors {
+  font-size: 1rem;
+  color: red;
 }
