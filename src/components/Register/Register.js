@@ -85,7 +85,7 @@ function Register() {
             <Card id='regCard'>
                 <FormControl onSubmit={onSubmit} validate >
                     <div>
-                        <h1>Reg</h1>
+                        <h2>Registration Form</h2>
                         <div className='inputContainer'>
                             <div className='inputGroup'>
                                 <TextField
@@ -235,7 +235,7 @@ function Register() {
                             <div>{formErrors.country}</div>
                         </div>
                         <div>
-                            <Button variant="contained" onClick={onSubmit}>Submit</Button>
+                            <Button variant="contained" color='primary' onClick={onSubmit}>Submit</Button>
                         </div>
                     </div>
                 </FormControl>

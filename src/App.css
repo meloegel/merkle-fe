@@ -12,10 +12,17 @@ nav {
   text-align: center;
 }
 .nav {
-  color: white;
+  color: oldlace;
 }
 
-.test {
+/* Home Page*/
+#homeCard {
+  width: 45%;
+  margin: 2rem auto;
+  background-color: gray;
+}
+
+.homeButtonContainer {
   display: flex;
   width: 80%;
   text-align: center;
@@ -29,19 +36,16 @@ nav {
   padding: 1rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* Registration Page*/
+.newUserForm {
+  text-align: center;
 }
 
-.App-link {
-  color: #61dafb;
+#regCard {
+  width: 35%;
+  margin: 2rem auto;
+  background-color: oldlace;
+  padding: 1.5rem;
 }
 
 .inputContainer {
@@ -65,18 +69,26 @@ nav {
   justify-content: space-evenly;
 }
 
-.newUserForm {
-  text-align: center;
-}
-
-#userTable {
-  width: 95%;
-  margin: 0 auto;
-  background-color: gray;
-}
-
 .input {
   background-color: lightgray;
+}
+
+/* Confomation Page*/
+#confirmCard {
+  width: 40%;
+  margin: 2rem auto;
+  text-align: center;
+  padding: 1rem;
+  background-color: oldlace;
+}
+
+/* Error Page*/
+#errorCard {
+  width: 40%;
+  margin: 2rem auto;
+  text-align: center;
+  padding: 1.5rem;
+  background-color: oldlace;
 }
 
 .formErrors {
@@ -84,40 +96,19 @@ nav {
   color: red;
 }
 
-#confirmCard {
-  width: 40%;
-  margin: 2rem auto;
-  text-align: center;
+.errorCardButtons {
   padding: 1rem;
-  background-color: lightgray;
+  display: flex;
+  justify-content: space-evenly;
 }
 
+/* Registered User Report*/
 .userReportContainer {
   margin: 0 auto;
   text-align: center;
 }
-
-.errorCard {
-  width: 50%;
-  margin: 2rem auto;
-  text-align: center;
-  padding: 1.5rem;
-}
-
-.errorCardButtons {
-  padding: 1rem;
-  display: flex;
-  justify-content: space-between;
-}
-
-#homeCard {
-  width: 45%;
-  margin: 2rem auto;
-  background-color: gray;
-}
-
-#regCard {
-  width: 50%;
+#userTable {
+  width: 95%;
   margin: 0 auto;
-  background-color: oldlace;
+  background-color: gray;
 }

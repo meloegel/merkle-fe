@@ -21,7 +21,7 @@ function Home() {
                 <div className='merkleLogo'>
                     <img src={MerkleImg} alt='Alt Merkle Logo' />
                 </div>
-                <div className='test'>
+                <div className='homeButtonContainer'>
                     <Button variant="contained" color='primary' style={{ width: '15rem', margin: '0 auto' }} onClick={handleReg}>Register a New User</Button>
                     <Button variant="contained" color='primary' style={{ width: '15rem', margin: '0 auto' }} onClick={handleUserReport} >Registered User Report</Button>
                 </div>

@@ -6,7 +6,7 @@ function UserReport() {
 
     return (
         <div className='userReportContainer'>
-            <h1>Registered User Report</h1>
+            <h1 style={{ color: 'oldlace' }}>Registered User Report</h1>
             <UserList />
         </div>
     )

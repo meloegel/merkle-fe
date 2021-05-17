@@ -16,9 +16,9 @@ function ErrorPage() {
 
     return (
         <div>
-            <Card className='errorCard'>
+            <Card id='errorCard'>
                 <h1>Unfotunatly an error has occured! :( </h1>
-                <h2>Please try and resubmit your registration form</h2>
+                <h3>Please try and resubmit your registration form</h3>
                 <div className='errorCardButtons'>
                     <Button variant="contained" onClick={handleClickHome}>Return to Home Page</Button>
                     <Button variant="contained" onClick={handleClickReg}>Try to submit again</Button>
