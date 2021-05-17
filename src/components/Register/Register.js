@@ -47,7 +47,7 @@ function Register() {
 
     const onSubmit = (evt) => {
         evt.preventDefault();
-        axios.post('http://localhost:8000/api/users/register', formValues)
+        axios.post('https://merkle-be.herokuapp.com/api/users/register', formValues)
             .then((res) => {
                 handleConformation(res)
             })

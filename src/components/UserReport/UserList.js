@@ -14,7 +14,7 @@ const UserList = () => {
     const [users, setUsers] = useState([])
 
     const getUserReport = () => {
-        axios.get('http://localhost:8000/api/users/')
+        axios.get('https://merkle-be.herokuapp.com/api/users/')
             .then((res) => {
                 console.log(res.data)
                 setUsers(res.data)
