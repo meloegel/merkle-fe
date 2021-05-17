@@ -10,6 +10,7 @@ html {
 /* Nav */
 nav {
   text-align: center;
+  padding: 0.5rem;
 }
 .nav {
   color: oldlace;
@@ -64,7 +65,7 @@ nav {
   flex-direction: row;
   justify-content: center;
   padding: 1rem;
-  width: 100%;
+  width: 75%;
   display: flex;
   justify-content: space-evenly;
 }
