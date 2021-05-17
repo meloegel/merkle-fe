@@ -1,6 +1,8 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 import MerkleImg from '../Merkle.png'
+import { Button } from '@material-ui/core';
+import Card from '@material-ui/core/Card'
 
 function Home() {
     const { push } = useHistory();
@@ -15,15 +17,15 @@ function Home() {
 
     return (
         <div>
-            <h1> Home</h1>
-            <div className='merkleLogo'>
-                <img src={MerkleImg} alt='Alt Merkle Logo' />
-            </div>
-            <div className='test'>
-                <button onClick={handleReg}>Register a New User</button>
-                <p>or</p>
-                <button onClick={handleUserReport} >View Registered User Report</button>
-            </div>
+            <Card id='homeCard'>
+                <div className='merkleLogo'>
+                    <img src={MerkleImg} alt='Alt Merkle Logo' />
+                </div>
+                <div className='test'>
+                    <Button variant="contained" color='primary' style={{ width: '15rem', margin: '0 auto' }} onClick={handleReg}>Register a New User</Button>
+                    <Button variant="contained" color='primary' style={{ width: '15rem', margin: '0 auto' }} onClick={handleUserReport} >Registered User Report</Button>
+                </div>
+            </Card>
         </div>
     )
 }
