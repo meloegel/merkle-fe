@@ -26,7 +26,7 @@ const FormatDateTime = (dateTime) => {
     var zLess = noZ[0]
     var timeUnformat = zLess.split(':')
     var hourTime = timeUnformat[0]
-    var hour = parseInt(hourTime) - 5
+    var hour = parseInt(hourTime) - 4
     if (hour < 0) {
         hour = hour + 24
     }
