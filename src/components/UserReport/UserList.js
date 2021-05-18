@@ -8,6 +8,7 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import FormatDateTime from '../FormatDateTime'
 
 
 const UserList = () => {
@@ -55,7 +56,7 @@ const UserList = () => {
                                 <TableCell align='right'>{user.state}</ TableCell>
                                 <TableCell align='right'>{user.zip}</ TableCell>
                                 <TableCell align='right'>{user.country}</ TableCell>
-                                <TableCell align='right'>{user.date}</ TableCell>
+                                <TableCell align='right'>{FormatDateTime(user.date)}</ TableCell>
                             </TableRow>
 
                         ))}
