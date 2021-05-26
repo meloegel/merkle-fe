@@ -13,20 +13,20 @@ const formatHour = (hour, min) => {
 
 const FormatDateTime = (dateTime) => {
     // Formats Date //
-    var date_time = dateTime.split("T")
-    var dateUnformat = date_time[0]
-    var dates = dateUnformat.split('-')
+    var date_time = dateTime.split("T") // Raw Date and Time //
+    var dateUnformat = date_time[0] // Removes T //
+    var dates = dateUnformat.split('-') // Split Date //
     var year = dates[0]
     var month = dates[1]
     var day = dates[2]
 
     // Formats Time //
-    var time = date_time[1]
+    var time = date_time[1] // Raw Time //
     var noZ = time.split('Z')
-    var zLess = noZ[0]
+    var zLess = noZ[0] // Removes Z //
     var timeUnformat = zLess.split(':')
     var hourTime = timeUnformat[0]
-    var hour = parseInt(hourTime) - 4
+    var hour = parseInt(hourTime) - 5 // Sets to Eastern Time Zone //
     if (hour < 0) {
         hour = hour + 24
     }

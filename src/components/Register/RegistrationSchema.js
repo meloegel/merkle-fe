@@ -13,6 +13,7 @@ const RegistrationSchema = yup.object().shape({
         .trim()
         .min(3, 'Please enter a valid address')
         .required('Address is a requied field'),
+    addressTwo: yup.string(),
     city: yup.string()
         .required('City is a required field'),
     state: yup.string()
